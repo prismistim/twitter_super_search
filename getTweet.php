@@ -42,7 +42,7 @@ function disp_tweet($value, $text){
   echo '<div class="card">' . PHP_EOL;
   echo '<div class="card-body">';
   echo '<div class="thumb">' . '<img alt="" src="' . $icon_url . '">' . '</div>' . PHP_EOL;
-  echo '<div class="meta"><a target="_blank" href="' . $url . '">' . $updated . '</a>' . '<br>@' . $screen_name .'</div>' . PHP_EOL;
+  echo '<div class="meta"><a class="time" target="_blank" href="' . $url . '">' . $updated . '</a>' . '<br><div class="userId">@' . $screen_name .'</div></div>' . PHP_EOL;
   echo '<div class="tweet">' . $text . '</div>' . PHP_EOL;
   echo '</div></div></div>' . PHP_EOL;
 }

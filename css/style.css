@@ -1,5 +1,5 @@
 span.keyword{
-  background-color: #EFC300;
+  background-color: #aaebff;
   -webkit-transition: all 0.8s;
   -moz-transition: all 0.8s;
   -ms-transition: all 0.8s;
@@ -19,4 +19,31 @@ span.keyword{
 .card{
   height: 310px;
   margin-bottom: 10px;
+  background-color :#aaebff;
+}
+
+.thumb{
+  float: left;
+}
+
+.meta{
+  text-align: right;
+}
+
+a.time{
+  color: #FFFFFE;
+  font-weight: 500;
+}
+
+.userId{
+  color: #444444;
+  font-weight: 600;
+}
+
+.tweet{
+  height: 200px;
+  margin-top: 15px;
+  padding: 10px;
+  background-color: #FFFFFF;
+  border-radius: 5px;
 }
