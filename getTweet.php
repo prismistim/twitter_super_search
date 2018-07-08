@@ -1,7 +1,10 @@
 <?php
-// 現状ローカルで実行する場合はoauthLocal.phpをコメントアウトする
-require 'oauthLocal.php';
-require 'oauthServer.php';
+// 認証情報の読込先
+if (getenv('ENV_MODE') === 'dev'){
+  require 'oauthLocal.php';
+}else{
+  require 'oauthServer.php';
+}
 
 if (isset($_GET['test-text'])){
 
