@@ -1,6 +1,6 @@
 <?php
 
-require 'oauthLocal.php';
+// require 'oauthLocal.php';
 require 'oauthServer.php';
 
 // キーワードによるツイート検索
