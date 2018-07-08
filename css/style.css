@@ -1,3 +1,22 @@
 span.keyword{
-  background-color: aqua;
+  background-color: #EFC300;
+  -webkit-transition: all 0.8s;
+  -moz-transition: all 0.8s;
+  -ms-transition: all 0.8s;
+  -o-transition: all 0.8s;
+  transition: all 0.8s;
+}
+
+#search{
+  border: solid 2px #DDDDDD;
+  border-radius: 5px;
+}
+
+#result{
+  margin-top: 20px;
+}
+
+.card{
+  height: 310px;
+  margin-bottom: 10px;
 }
