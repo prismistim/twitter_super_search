@@ -1,25 +1,30 @@
 <?php
-
-// require 'oauthLocal.php';
+// 現状ローカルで実行する場合はoauthLocal.phpをコメントアウトする
+require 'oauthLocal.php';
 require 'oauthServer.php';
 
-// キーワードによるツイート検索
-$tweets_params = ['q' => '夜景,きれい OR キレイ OR 綺麗' ,'count' => '10'];
-$tweets = $connection->get('search/tweets', $tweets_params)->statuses;
+if (isset($_GET['test-text'])){
 
-// ニックネームからユーザ情報を取得
-$users_params = ['screen_name' => 'yokoh9'];
-$users = $connection->get('users/show', $users_params);
+  $searchWords = $_GET['test-text'];
 
-foreach ($tweets as $value) {
-  $text = htmlspecialchars($value->text, ENT_QUOTES, 'UTF-8', false);
-  // 検索キーワードをマーキング
-  $keywords = preg_split('/,|\sOR\s/', $tweets_params['q']); //配列化
-  foreach ($keywords as $key) {
-      $text = str_ireplace($key, '<span class="keyword">'.$key.'</span>', $text);
+  // キーワードによるツイート検索
+  $tweets_params = ['q' => $searchWords ,'count' => '12'];
+  $tweets = $connection->get('search/tweets', $tweets_params)->statuses;
+
+  // ニックネームからユーザ情報を取得
+  $users_params = ['screen_name' => 'yokoh9'];
+  $users = $connection->get('users/show', $users_params);
+
+  foreach ($tweets as $value) {
+    $text = htmlspecialchars($value->text, ENT_QUOTES, 'UTF-8', false);
+    // 検索キーワードをマーキング
+    $keywords = preg_split('/,|\sOR\s/', $tweets_params['q']); //配列化
+    foreach ($keywords as $key) {
+        $text = str_ireplace($key, '<span class="keyword">'.$key.'</span>', $text);
+    }
+    // ツイート表示のHTML生成
+    disp_tweet($value, $text);
   }
-  // ツイート表示のHTML生成
-  disp_tweet($value, $text);
 }
 
 function disp_tweet($value, $text){

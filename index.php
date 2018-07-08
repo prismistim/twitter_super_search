@@ -8,7 +8,7 @@
 
   <!--CSS 読込み-->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="/css/style.css">
 
 </head>
 <body>
@@ -40,7 +40,7 @@
         <div class="col-lg-12">
           <h2>さぁ、検索してみましょう！</h2>
           <!-- http://cccabinet.jpn.org/bootstrap4/components/navs#nav-pills 参照-->
-          <form id="test-form">
+          <form id="test-form" action="index.php" method="get">
             <div class="form-group">
               <label for="example">テスト用フォーム</label>
               <input type="text" name="test-text" class="form-control" id="example" placeholder="テスト用">
