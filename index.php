@@ -57,10 +57,10 @@
           <h3>Option 2</h3>
           <div class="btn-group btn-group-toggle" data-toggle="buttons">
             <label class="btn btn-outline-primary">
-              <input type="radio" name="options id="option1" autocomplete="off"" checked> 認証ユーザーのみ
+              <input type="radio" name="subOption id="option1" autocomplete="off"" checked value="認証済み"> 認証ユーザーのみ
             </label>
             <label class="btn btn-outline-primary">
-              <input type="radio" name="options" id="option2" autocomplete="off"> else
+              <input type="radio" name="subOption" id="option2" autocomplete="off"　value="非認証"> else
             </label>
           </div>
         </div>
