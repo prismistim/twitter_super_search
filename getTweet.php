@@ -9,23 +9,6 @@ if (getenv('ENV_MODE') === 'dev'){
 if (isset($_GET['test-text'])){
 
   $searchWords = $_GET['test-text'];
-  $subOption = $_GET['ninsyo'];
-
-  if($subOption == "認証済み"){
-    $users_params = ['q' => $searchWords ,'count' => '12'];
-    $users = $connection->get('users/search', $users_params)->statuses;
-
-    foreach ($users as $value) {
-      $user = htmlspecialchars($value->text, ENT_QUOTES, 'UTF-8', false);
-      // 検索キーワードをマーキング
-      $keywords = preg_split('/,|\sOR\s/', $tweets_params['q']); //配列化
-      foreach ($keywords as $key) {
-          $text = str_ireplace($key, '<span class="keyword">'.$key.'</span>', $text);
-      }
-      // ツイート表示のHTML生成
-      disp_tweet($value, $text);
-    }
-  }
 
   $options_type = $_GET['options'];
 
@@ -98,7 +81,6 @@ function disp_tweet($value, $text){
   echo '<div class="tweet">' . $text . '</div>' . PHP_EOL;
   echo '</div></div></div>' . PHP_EOL;
 }
-
 function disp_users($value, $name){
   $icon_url = $value->profile_image_url;
   $screen_name = $value->screen_name;
