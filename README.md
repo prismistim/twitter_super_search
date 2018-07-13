@@ -1,6 +1,5 @@
 # twitter_super_search
-Twitterの検索がAPIでちょっと便利になる？サービス(???)
-https://twitter_super_search.azurewebsites.net
+Twitterの検索がAPIでちょっと便利になるサービスを目指して
 
 ## 概要
 Twitterの公式クライアント、公式サイトで検索すると、一つの単語で色々引っかかってしまいますよね。
@@ -10,8 +9,13 @@ Twitterの公式クライアント、公式サイトで検索すると、一つ�
 にチェックを入れるだけで簡単に別々の検索をすることが出来ます。便利ですね！(?)
 
 ## 構成
-- デプロイ先：Azure(オートデプロイ)
-https://twitter_super_search.azurewebsites.net
+- [master]正式環境(安定してサービスを提供する場所)
+https://twitter-super-search.herokuapp.com/
+
+- [dev]開発環境(動くかどうかなどの確認は以下で行う)
+https://twitter-super-search-stg.herokuapp.com/
+
+基本的に自分のブランチで作ったものをサーバーで試したい場合は、devブランチにマージする。masterブランチは安定版を置く場所にする。
 
 - 使用フレームワーク(ライブラリ)
   - Bootstrap4
