@@ -10,15 +10,6 @@ span.keyword{
 #search{
   border: solid 2px #DDDDDD;
   border-radius: 5px;
-  padding: 10px;
-}
-
-.option1{
-  margin-bottom: 20px;
-}
-
-.option2{
-  margin-bottom: 20px;
 }
 
 #result{
@@ -40,7 +31,7 @@ span.keyword{
 }
 
 a.time{
-  color: #FEFFFF;
+  color: #FFFFFE;
   font-weight: 500;
 }
 
