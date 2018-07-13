@@ -31,6 +31,10 @@ span.keyword{
   background-color :#aaebff;
 }
 
+.userCard{
+  background-color :#ebebeb;
+}
+
 .thumb{
   float: left;
 }
@@ -55,4 +59,28 @@ a.time{
   padding: 10px;
   background-color: #FFFFFF;
   border-radius: 5px;
+}
+
+.userThumb{
+  text-align: center;
+}
+
+.userThumb img{
+  width: 120px;
+  height: 120px;
+  margin-bottom: 5px;
+}
+
+.userMeta{
+  background-color: #FFF; 
+  text-align: center;
+}
+
+.userMeta > .userName{
+  font-size: 20px;
+  font-weight: 200;
+}
+
+.userMeta > .userId{
+  font-size: 14px;
 }
