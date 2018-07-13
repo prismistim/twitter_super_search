@@ -9,6 +9,7 @@ if (getenv('ENV_MODE') === 'dev'){
 if (isset($_GET['test-text'])){
 
   $searchWords = $_GET['test-text'];
+  
 
   // キーワードによるツイート検索
   $tweets_params = ['q' => $searchWords ,'count' => '12'];
