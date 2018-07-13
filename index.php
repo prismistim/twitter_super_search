@@ -8,7 +8,7 @@
 
   <!--CSS 読込み-->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
-  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="css/style.css">
 
 </head>
 <body>
@@ -17,14 +17,16 @@
     <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false">
       <span class="navbar-toggler-icon"></span>
     </button>
-    <ul class="navbar-nav">
-      <li class="nav-item">
-        <a class="nav-link" href="search.html">さがす</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="https://twitter.com/intent/tweet?text=「Twitter Super Search」%0aTwitterの検索をちょっと便利にする(?)Webサービス&url=https://www.pr.url/&hashtags=タグ,二つ目" onClick="window.open(encodeURI(decodeURI(this.href)), 'tweetwindow', 'width=650, height=470, personalbar=0, toolbar=0, scrollbars=1, sizable=1'); return false;" rel="nofollow" class="twitter-link">Share</a>
-      </li>
-    </ul>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" href="search.html">さがす</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="https://twitter.com/intent/tweet?text=「Twitter Super Search」%0aTwitterの検索をちょっと便利にする(?)Webサービス&url=https://www.pr.url/&hashtags=タグ,二つ目" onClick="window.open(encodeURI(decodeURI(this.href)), 'tweetwindow', 'width=650, height=470, personalbar=0, toolbar=0, scrollbars=1, sizable=1'); return false;" rel="nofollow" class="twitter-link">Share</a>
+        </li>
+      </ul>
+    </div>
   </nav>
   <div class="jumbotron jumbotron-fluid">
     <div class="container">
@@ -41,42 +43,38 @@
           <h2>さぁ、検索してみましょう！</h2>
           <!-- http://cccabinet.jpn.org/bootstrap4/components/navs#nav-pills 参照-->
           <form id="test-form" action="index.php" method="get">
+            <div class="col-lg-5 option1">
+              <h3>Option 1</h3>
+              <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                <label class="btn btn-outline-primary">
+                  <input type="radio" name="options" id="option1" autocomplete="off" checked="checked" value="tweets"> ツイート
+                </label>
+                <label class="btn btn-outline-primary">
+                  <input type="radio" name="options" id="option2" autocomplete="off" value="username"> ユーザー名
+                </label>
+                <label class="btn btn-outline-primary">
+                  <input type="radio" name="options" id="option3" autocomplete="off" value="userId"> ユーザーID
+                </label>
+              </div>
+            </div>
+            <div class="col-lg-5 option2">
+              <!-- <h3>Option 2</h3>
+              <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                <label class="btn btn-outline-primary">
+                  <input type="radio" name="subOption" id="option1" autocomplete="off" checked="checked" value="verified"> 認証ユーザーのみ
+                </label>
+                <label class="btn btn-outline-primary">
+                  <input type="radio" name="subOption" id="option2" autocomplete="off"　value="noVerified"> else
+                </label>
+              </div> -->
+            </div>
             <div class="form-group">
-              <label for="example">テスト用フォーム</label>
-              <input type="text" name="test-text" class="form-control" id="example" placeholder="テスト用">
+              <input type="text" name="text" class="form-control" id="example" placeholder="キーワードを入力">
+              <div class="serchbtn" style="padding-top:20px;">
+                <button type="submit" class="btn btn-outline-danger btn-block">Search</button>
+              </div>
             </div>
           </form>
-        </div>
-        <div class="col-lg-6">
-          <h3>Option 1</h3>
-          <div class="btn-group btn-group-toggle" data-toggle="buttons">
-            <label class="btn btn-outline-primary">
-              <input type="radio" name="options id="option1" autocomplete="off"" checked> ツイート
-            </label>
-            <label class="btn btn-outline-primary">
-              <input type="radio" name="options" id="option2" autocomplete="off"> ユーザー名
-            </label>
-            <label class="btn btn-outline-primary">
-              <input type="radio" name="options" id="option3" autocomplete="off"> ユーザーID
-            </label>
-          </div>
-        </div>
-
-        <div class="col-lg-6">
-          <h3>Option 2</h3>
-          <div class="btn-group btn-group-toggle" data-toggle="buttons">
-            <label class="btn btn-outline-primary">
-              <input type="radio" name="options id="option1" autocomplete="off"" checked> 認証ユーザーのみ
-            </label>
-            <label class="btn btn-outline-primary">
-              <input type="radio" name="options" id="option2" autocomplete="off"> else
-            </label>
-          </div>
-        </div>
-        <div class="col-lg-12">
-          <div id="search" style="padding-top:20px;">
-            <button type="submit" class="btn btn-outline-danger btn-block">Search</button>
-          </div>
         </div>
       </div>
     </div>
