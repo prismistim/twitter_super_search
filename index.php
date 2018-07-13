@@ -43,7 +43,7 @@
           <h2>さぁ、検索してみましょう！</h2>
           <!-- http://cccabinet.jpn.org/bootstrap4/components/navs#nav-pills 参照-->
           <form id="myform" action="index.php" method="get">
-            <!-- <div class="col-lg-5 option1">
+            <div class="col-lg-5 option1">
               <h3>Option 1</h3>
               <div class="btn-group btn-group-toggle" data-toggle="buttons">
                 <label class="btn btn-outline-primary">
@@ -55,9 +55,12 @@
                 <label class="btn btn-outline-primary">
                   <input type="radio" name="options" id="option3" autocomplete="off" value="userId"> ユーザーID
                 </label>
+                <label class="btn btn-outline-primary">
+                  <input type="radio" name="options" id="option4" autocomplete="off" value="description"> 自己紹介
+                </label>
               </div>
             </div>
-            <div class="col-lg-5 option2">
+            <!-- <div class="col-lg-5 option2">
               <h3>Option 2</h3>
               <div class="btn-group btn-group-toggle" data-toggle="buttons">
                 <label class="btn btn-outline-primary">

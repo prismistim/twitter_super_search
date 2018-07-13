@@ -8,31 +8,47 @@ if (getenv('ENV_MODE') === 'dev'){
 
 if (isset($_GET['text'])){
   $searchWords = $_GET['text'];
-  $tweets_params = ['q' => $searchWords ,'count' => '9'];
-  $users = $connection->get('users/search', $tweets_params);
+  $tweetsParams = ['q' => $searchWords ,'count' => '9'];
+  $optionType = $_GET['options'];
+  
+  if($optionType == 'tweets'){
+    
+  }else{
+    // $connection->get('やりたい事', 検索条件)でユーザー情報を取得
+    $users = $connection->get('users/search', $tweetsParams);
 
-  foreach ($users as $value) {
-    $text = htmlspecialchars($value->name, ENT_QUOTES, 'UTF-8', false);
-    // 検索キーワードをマーキング
-    $keywords = preg_split('/,|\sOR\s/', $tweets_params['q']); //配列化
-    foreach ($keywords as $key) {
-      $users = str_ireplace($key, '<span class="keyword">'.$key.'</span>', $text);
+    // このforeachは受け取った値($users)を1つずつ分けて結果を表示する関数に送るためのもの
+    foreach ($users as $value) {
+      switch ($optionType){
+        case 'username':
+          if (strpos($value->name, $searchWords) != false){
+            disp_users($value, $users); //検索結果を表示する関数に渡す
+          }
+          break;
+        case 'userId':
+          // TODO:ここに上と同じように書いて、$value->XXXXXのXXXXXを変える。
+          break;
+        case 'description':
+          // TODO:ここに上と同じように書いて、$value->XXXXXのXXXXXを変える。
+          break;
+      }
     }
-    // ツイート表示のHTML生成
-    disp_users($value, $users);//キーワード検索
   }
 }
 
 function disp_users($value, $users){
   $icon_url = $value->profile_image_url;
+  $icon_url = str_replace('normal', 'bigger', $icon_url); //デフォルトの画像は小さいので大きいものを読み込むため文字を置き換え
   $screen_name = $value->screen_name;
   $user_name = $value->name;
   $url = 'https://twitter.com/' . $screen_name;
+  $description = $value->description;
 
   echo '<div class="col-lg-4">';
-  echo '<div class="card">' . PHP_EOL;
+  echo '<div class="card userCard">' . PHP_EOL;
   echo '<div class="card-body">';
-  echo '<div class="thumb">' . '<img alt="" src="' . $icon_url . '">' . '</div>' . PHP_EOL;
-  echo '<div class="meta"><a class="userName" target="_blank" href="' . $url . '">' . $user_name . '</a>' . '<br><div class="userId">@' . $screen_name .'</div></div>' . PHP_EOL;
+  echo '<div class="userThumb">' . '<img alt="" src="' . $icon_url . '">' . '</div>' . PHP_EOL;
+  echo '<div class="userMeta"><a class="userName" target="_blank" href="' . $url . '">' . $user_name . '</a>' . '<br><div class="userId">@' . $screen_name .'</div></div>' . PHP_EOL;
+  echo '<div class="description">' . $description . '</div>';
   echo '</div></div></div>' . PHP_EOL;
 }
