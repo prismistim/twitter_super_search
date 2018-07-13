@@ -7,79 +7,75 @@ if (getenv('ENV_MODE') === 'dev'){
 }
 
 if (isset($_GET['test-text'])){
-
-  $searchWords = $_GET['test-text'];
-  $subOption = $_GET['ninsyo'];
-
-  if($subOption == "認証済み"){
-    $users_params = ['q' => $searchWords ,'count' => '12'];
-    $users = $connection->get('users/search', $users_params)->statuses;
-
-    foreach ($users as $value) {
-      $user = htmlspecialchars($value->text, ENT_QUOTES, 'UTF-8', false);
-      // 検索キーワードをマーキング
-      $keywords = preg_split('/,|\sOR\s/', $tweets_params['q']); //配列化
-      foreach ($keywords as $key) {
-          $text = str_ireplace($key, '<span class="keyword">'.$key.'</span>', $text);
-      }
-      // ツイート表示のHTML生成
-      disp_tweet($value, $text);
-    }
-  }
-
+  // オプションをラジオボタンから取得
+  $searchWords = $_GET['text'];
   $options_type = $_GET['options'];
+  // $subOption = $_GET['subOption'];
+
+  // if($subOption == "認証済み"){
+  //   $users_params = ['q' => $searchWords ,'count' => '12'];
+  //   $users = $connection->get('users/search', $users_params)->statuses;
+
+  //   foreach ($users as $value) {
+  //     $user = htmlspecialchars($value->text, ENT_QUOTES, 'UTF-8', false);
+  //     // 検索キーワードをマーキング
+  //     $keywords = preg_split('/,|\sOR\s/', $tweets_params['q']); //配列化
+  //     foreach ($keywords as $key) {
+  //         $text = str_ireplace($key, '<span class="keyword">'.$key.'</span>', $text);
+  //     }
+  //     // ツイート表示のHTML生成
+  //     disp_tweet($value, $text);
+  //   }
+  // }
 
   // キーワードによるツイート検索
   $tweets_params = ['q' => $searchWords ,'count' => '12'];
 
-  swith($options_type){
-    case "keyword":
-      $tweets = $connection->get('search/tweets', $tweets_params)->statuses;//キーワード検索
-      break;
-    case "username":
-      $tweets = $connection->get('users/search', $tweets_params)->statuses;
-      break;
-    case　"userId":
-      $tweets = $connection->get('users/search', $tweets_params)->statuses;
-      break;
-  }
-
-  // ニックネームからユーザ情報を取得
-  $users_params = ['screen_name' => 'yokoh9'];
-  $users = $connection->get('users/show', $users_params);
-
-  foreach ($tweets as $value) {
-    swith($options_type){
-      case "keyword"://キーワード検索のもろもろ
+  switch($options_type){
+    // キーワード検索
+    case "tweets":
+      $tweets = $connection->get('search/tweets', $tweets_params)->statuses;
+      foreach ($tweets as $value) {
+        print "送信された内容は{$_GET['options']}です。\n";
         $text = htmlspecialchars($value->text, ENT_QUOTES, 'UTF-8', false);
         // 検索キーワードをマーキング
         $keywords = preg_split('/,|\sOR\s/', $tweets_params['q']); //配列化
         foreach ($keywords as $key) {
-            $text = str_ireplace($key, '<span class="keyword">'.$key.'</span>', $text);
+          $text = str_ireplace($key, '<span class="keyword">'.$key.'</span>', $text);
         }
         // ツイート表示のHTML生成
         disp_tweet($value, $text);//キーワード検索
-        break;
-
-      case "username"://ユーザー名検索のもろもろ
-        $name = htmlspecialchars($value->name, ENT_QUOTES, 'UTF-8', false);
-        $keywords = preg_split('/,|\sOR\s/', $tweets_params['q']); //配列化
-        foreach ($keywords as $key) {
-            $name = str_ireplace($key, '<span class="keyword">'.$key.'</span>', $name);
-        }
-        disp_users($value, $name);
-        break;
-
-      case　"userId"://ユーザーID検索もろもろ
-        $id = htmlspecialchars($value->screen_name, ENT_QUOTES, 'UTF-8', false);
-        $keywords = preg_split('/,|\sOR\s/', $tweets_params['q']); //配列化
-        foreach ($keywords as $key) {
-            $id = str_ireplace($key, '<span class="keyword">'.$key.'</span>', $id);
-        }
-        disp_users($value, $id);
-        break;
-    }
+      }
+      break;
+    case "username":
+      $users = $connection->get('users/search', $tweets_params)->statuses;
+      break;
+    case "userId":
+      $users = $connection->get('users/search', $tweets_params)->statuses;
+      break;
   }
+
+  // foreach ($users as $value) {
+  //   switch ($options_type){
+  //     case "username"://ユーザー名検索のもろもろ
+  //       $name = htmlspecialchars($value->name, ENT_QUOTES, 'UTF-8', false);
+  //       $keywords = preg_split('/,|\sOR\s/', $tweets_params['q']); //配列化
+  //       foreach ($keywords as $key) {
+  //           $name = str_ireplace($key, '<span class="keyword">'.$key.'</span>', $name);
+  //       }
+  //       disp_users($value, $name);
+  //       break;
+
+  //     case "userId"://ユーザーID検索もろもろ
+  //       $id = htmlspecialchars($value->screen_name, ENT_QUOTES, 'UTF-8', false);
+  //       $keywords = preg_split('/,|\sOR\s/', $tweets_params['q']); //配列化
+  //       foreach ($keywords as $key) {
+  //           $id = str_ireplace($key, '<span class="keyword">'.$key.'</span>', $id);
+  //       }
+  //       disp_users($value, $id);
+  //       break;
+  //   }
+  // }
 }
 
 function disp_tweet($value, $text){

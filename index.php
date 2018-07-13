@@ -39,38 +39,37 @@
   <div class="container">
     <div id="search">
       <div class="row">
-        <div class="col-lg-6 option1">
-          <h3>Option 1</h3>
-          <div class="btn-group btn-group-toggle" data-toggle="buttons">
-            <label class="btn btn-outline-primary">
-              <input type="radio" name="options id="option1" autocomplete="off"" checked> ツイート
-            </label>
-            <label class="btn btn-outline-primary">
-              <input type="radio" name="options" id="option2" autocomplete="off"> ユーザー名
-            </label>
-            <label class="btn btn-outline-primary">
-              <input type="radio" name="options" id="option3" autocomplete="off"> ユーザーID
-            </label>
-          </div>
-        </div>
-        <div class="col-lg-6 option2">
-          <h3>Option 2</h3>
-          <div class="btn-group btn-group-toggle" data-toggle="buttons">
-            <label class="btn btn-outline-primary">
-              <input type="radio" name="subOption id="option1" autocomplete="off"" checked value="認証済み"> 認証ユーザーのみ
-            </label>
-            <label class="btn btn-outline-primary">
-              <input type="radio" name="subOption" id="option2" autocomplete="off"　value="非認証"> else
-            </label>
-          </div>
-        </div>
-
         <div class="col-lg-12">
           <h2>さぁ、検索してみましょう！</h2>
           <!-- http://cccabinet.jpn.org/bootstrap4/components/navs#nav-pills 参照-->
           <form id="test-form" action="index.php" method="get">
+            <div class="col-lg-5 option1">
+              <h3>Option 1</h3>
+              <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                <label class="btn btn-outline-primary">
+                  <input type="radio" name="options" id="option1" autocomplete="off" checked="checked" value="tweets"> ツイート
+                </label>
+                <label class="btn btn-outline-primary">
+                  <input type="radio" name="options" id="option2" autocomplete="off" value="username"> ユーザー名
+                </label>
+                <label class="btn btn-outline-primary">
+                  <input type="radio" name="options" id="option3" autocomplete="off" value="userId"> ユーザーID
+                </label>
+              </div>
+            </div>
+            <div class="col-lg-5 option2">
+              <!-- <h3>Option 2</h3>
+              <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                <label class="btn btn-outline-primary">
+                  <input type="radio" name="subOption" id="option1" autocomplete="off" checked="checked" value="verified"> 認証ユーザーのみ
+                </label>
+                <label class="btn btn-outline-primary">
+                  <input type="radio" name="subOption" id="option2" autocomplete="off"　value="noVerified"> else
+                </label>
+              </div> -->
+            </div>
             <div class="form-group">
-              <input type="text" name="test-text" class="form-control" id="example" placeholder="キーワードを入力">
+              <input type="text" name="text" class="form-control" id="example" placeholder="キーワードを入力">
               <div class="serchbtn" style="padding-top:20px;">
                 <button type="submit" class="btn btn-outline-danger btn-block">Search</button>
               </div>
@@ -92,9 +91,5 @@
   <script src="/js/jquery-3.3.1.min.js" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
-  <script src="/js/oauth.js" type="text/javascript"></script>
-  <script src="/js/sha1.js" type="text/javascript"></script>
-  <script src="/js/localenv.js" type="text/javascript"></script>
-  <script src="/js/getTwits.js" type="text/javascript"></script>
 </body>
 </html>
