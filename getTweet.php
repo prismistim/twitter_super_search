@@ -9,7 +9,7 @@ if (getenv('ENV_MODE') === 'dev'){
 if (isset($_GET['text'])){
   $searchWords = $_GET['text']; // キーワードを取得
   $optionType = $_GET['options']; // 検索したいものを取得
-  // $subOptionType = $_GET['suboptions']; // 検索条件を取得
+  $subOptionType = $_GET['suboptions']; // 検索したいもの(認証済みユーザーかそうでないか)を取得２
 
   $tweetsParams = ['q' => $searchWords ,'count' => '12']; // 検索条件を設定
   
@@ -24,8 +24,17 @@ if (isset($_GET['text'])){
       foreach ($keywords as $key) {
           $text = str_ireplace($key, '<span class="keyword">'.$key.'</span>', $text);
       }
-      // ツイート表示のHTML生成
-      disp_tweet($value, $text);
+
+      // サブオプションで認証済みかそうでないかを見分ける
+      if ($subOptionType == 'Verified'){
+        if ($value->user->verified == true){
+          disp_tweet($value, $text);
+        }
+      }else{
+        if ($value->user->verified == false){
+          disp_tweet($value, $text);
+        }
+      }
     }
   }else{
     // $connection->get('やりたい事', 検索条件)でユーザー情報を取得
@@ -36,16 +45,19 @@ if (isset($_GET['text'])){
       switch ($optionType){
         case 'username':
           if (strpos($value->name, $searchWords) != false){
+            // TODO:ここに認証に関するif文を入れる
             disp_users($value, $users); //検索結果を表示する関数に渡す
           }
           break;
         case 'userId':
           if (strpos($value->screen_name, $searchWords) != false){
+            // TODO:ここに認証に関するif文を入れる
             disp_users($value, $users); //検索結果を表示する関数に渡す
           }
           break;
         case 'description':
           if (strpos($value->description, $searchWords) != false){
+            // TODO:ここに認証に関するif文を入れる
             disp_users($value, $users); //検索結果を表示する関数に渡す
           }
           break;
@@ -66,7 +78,7 @@ function disp_tweet($value, $text){
   echo '<div class="card">' . PHP_EOL;
   echo '<div class="card-body">';
   echo '<div class="thumb">' . '<img alt="" src="' . $icon_url . '">' . '</div>' . PHP_EOL;
-  echo '<div class="meta"><a class="time" target="_blank" href="' . $url . '">' . $updated . '</a>' . '<br><div class="userId">@' . $screen_name .'</div></div>' . PHP_EOL;
+  echo '<div class="meta"><a class="time" target="_blank" href="' . $url . '">' . $updated . '</a>' . '<br><div class="name">' . $name .'</div><div class="userId">@' . $screen_name . '</div></div>' . PHP_EOL;
   echo '<div class="tweet">' . $text . '</div>' . PHP_EOL;
   echo '</div></div></div>' . PHP_EOL;
 }

@@ -60,7 +60,7 @@
                 </label>
               </div>
             </div>
-            <!-- <div class="col-lg-5 option2">
+            <div class="col-lg-5 option2">
               <h3>Option 2</h3>
               <div class="btn-group btn-group-toggle" data-toggle="buttons">
                 <label class="btn btn-outline-primary">
@@ -70,7 +70,7 @@
                   <input type="radio" name="suboptions" id="option2" autocomplete="off"　value="noVerified"> else
                 </label>
               </div>
-            </div> -->
+            </div>
             <div class="form-group">
               <input type="text" name="text" class="form-control" id="example" placeholder="キーワードを入力">
               <div class="serchbtn" style="padding-top:20px;">
