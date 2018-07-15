@@ -45,13 +45,15 @@
     </div>
     <p>普段Twitterの公式クライアントで検索するとこのような画面が出てきますよね？.....</p>
     <p>ユーザーを検索したくてもこれでは使いづらい</p>
+    <p style="margin-top:50px;">それを解決するのがこのTwitter Super Search</p>
     <img src="img/TSS_screen.png" style="width:100%;height:auto;">
-    <p>それを解決するのがこのTwitter Super Search</p>
+    <p>Option1は検索キーワードがどこに入っているものを表示するかを選ぶことができます</p>
+    <p>Option2は検索対象を認証ユーザーと一般ユーザーから選ぶことができます</p>
 
-    <p>さあ検索してみましょう</p>
+    <p style="margin-top:50px;">さあ検索してみましょう</p>
     <div class="abc">
       <a href="search.php">
-        <button type="submit" class="btn btn-outline-primary btn-block">Twitter Super Searchを使う</button>
+        <button type="submit" class="btn btn-outline-primary btn-block" style="margin-bottom:50px;">Twitter Super Searchを使う</button>
       </a>
     </div>
   </div>
