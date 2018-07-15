@@ -46,8 +46,8 @@
             <div class="col-lg-5 option1">
               <h3>Option 1</h3>
               <div class="btn-group btn-group-toggle" data-toggle="buttons">
-                <label class="btn btn-outline-primary">
-                  <input type="radio" name="options" id="option1" autocomplete="off" value="tweets"> ツイート
+                <label class="btn btn-outline-primary active">
+                  <input type="radio" name="options" id="option1" autocomplete="off" value="tweets" checked> ツイート
                 </label>
                 <label class="btn btn-outline-primary">
                   <input type="radio" name="options" id="option2" autocomplete="off" value="username"> ユーザー名
@@ -64,10 +64,10 @@
               <h3>Option 2</h3>
               <div class="btn-group btn-group-toggle" data-toggle="buttons">
                 <label class="btn btn-outline-primary">
-                  <input type="radio" name="suboptions" id="option1" autocomplete="off" checked="checked" value="verified"> 認証ユーザーのみ
+                  <input type="radio" name="suboptions" id="option1" autocomplete="off" value="verified"> 認証ユーザー
                 </label>
-                <label class="btn btn-outline-primary">
-                  <input type="radio" name="suboptions" id="option2" autocomplete="off"　value="noVerified"> else
+                <label class="btn btn-outline-primary active">
+                  <input type="radio" name="suboptions" id="option2" autocomplete="off"　value="on" checked> 一般ユーザー
                 </label>
               </div>
             </div>

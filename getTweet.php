@@ -11,14 +11,14 @@ if (isset($_GET['text'])){
   $optionType = $_GET['options']; // 検索したいものを取得
   $subOptionType = $_GET['suboptions']; // 検索したいもの(認証済みユーザーかそうでないか)を取得２
 
-  $tweetsParams = ['q' => $searchWords ,'count' => '12']; // 検索条件を設定
+  $tweetsParams = ['q' => $searchWords ,'count' => '12']; // 検索条件を設
   
   if($optionType == 'tweets'){
     // キーワードによるツイート検索
     $tweets = $connection->get('search/tweets', $tweetsParams)->statuses;
 
     foreach ($tweets as $value) {
-      $text = htmlspecialchars($value->text, ENT_QUOTES, 'UTF-8', false);
+      $text = htmlspecialchars($value->text, ENT_QUOTES, 'UTF-8', false); //特殊文字を変換しながら$textに代入
       // 検索キーワードをマーキング
       $keywords = preg_split('/,|\sOR\s/', $tweetsParams['q']); //配列化
       foreach ($keywords as $key) {
@@ -26,7 +26,7 @@ if (isset($_GET['text'])){
       }
 
       // サブオプションで認証済みかそうでないかを見分ける
-      if ($subOptionType == 'Verified'){
+      if ($subOptionType == 'verified'){
         if ($value->user->verified == true){
           disp_tweet($value, $text);
         }
