@@ -1,4 +1,7 @@
 <?php
+
+date_default_timezone_set('Asia/Tokyo');
+
 // 認証情報の読込先
 if (getenv('ENV_MODE') === 'dev'){
   require 'oauthLocal.php';
@@ -45,20 +48,41 @@ if (isset($_GET['text'])){
       switch ($optionType){
         case 'username':
           if (strpos($value->name, $searchWords) != false){
-            // TODO:ここに認証に関するif文を入れる
-            disp_users($value, $users); //検索結果を表示する関数に渡す
+            if ($subOptionType == 'verified'){
+              if ($value->verified == true){
+                disp_users($value, $users);
+              }
+            }else{
+              if ($value->verified == false){
+                disp_users($value, $users);
+              }
+            }
           }
           break;
         case 'userId':
           if (strpos($value->screen_name, $searchWords) != false){
-            // TODO:ここに認証に関するif文を入れる
-            disp_users($value, $users); //検索結果を表示する関数に渡す
+            if ($subOptionType == 'verified'){
+              if ($value->verified == true){
+                disp_users($value, $users);
+              }
+            }else{
+              if ($value->verified == false){
+                disp_users($value, $users);
+              }
+            }
           }
           break;
         case 'description':
           if (strpos($value->description, $searchWords) != false){
-            // TODO:ここに認証に関するif文を入れる
-            disp_users($value, $users); //検索結果を表示する関数に渡す
+            if ($subOptionType == 'verified'){
+              if ($value->verified == true){
+                disp_users($value, $users);
+              }
+            }else{
+              if ($value->verified == false){
+                disp_users($value, $users);
+              }
+            }
           }
           break;
       }
