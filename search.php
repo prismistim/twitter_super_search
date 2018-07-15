@@ -13,7 +13,7 @@
 </head>
 <body>
   <nav class="navbar navbar-expand-lg navbar-light">
-    <a class="navbar-brand" href="/index.html">Twitter Super Search</a>
+    <a class="navbar-brand" href="/index.php">Twitter Super Search</a>
     <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false">
       <span class="navbar-toggler-icon"></span>
     </button>
