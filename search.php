@@ -12,15 +12,15 @@
 
 </head>
 <body>
-  <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand" href="#">Twitter Super Search</a>
+  <nav class="navbar navbar-expand-lg navbar-light">
+    <a class="navbar-brand" href="/index.html">Twitter Super Search</a>
     <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav">
         <li class="nav-item">
-          <a class="nav-link" href="search.html">さがす</a>
+          <a class="nav-link" href="search.php">さがす</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="https://twitter.com/intent/tweet?text=「Twitter Super Search」%0aTwitterの検索をちょっと便利にする(?)Webサービス&url=https://www.pr.url/&hashtags=タグ,二つ目" onClick="window.open(encodeURI(decodeURI(this.href)), 'tweetwindow', 'width=650, height=470, personalbar=0, toolbar=0, scrollbars=1, sizable=1'); return false;" rel="nofollow" class="twitter-link">Share</a>
@@ -42,12 +42,12 @@
         <div class="col-lg-12">
           <h2>さぁ、検索してみましょう！</h2>
           <!-- http://cccabinet.jpn.org/bootstrap4/components/navs#nav-pills 参照-->
-          <form id="myform" action="index.php" method="get">
+          <form id="myform" action="search.php" method="get">
             <div class="col-lg-5 option1">
               <h3>Option 1</h3>
               <div class="btn-group btn-group-toggle" data-toggle="buttons">
-                <label class="btn btn-outline-primary">
-                  <input type="radio" name="options" id="option1" autocomplete="off" value="tweets"> ツイート
+                <label class="btn btn-outline-primary active">
+                  <input type="radio" name="options" id="option1" autocomplete="off" value="tweets" checked> ツイート
                 </label>
                 <label class="btn btn-outline-primary">
                   <input type="radio" name="options" id="option2" autocomplete="off" value="username"> ユーザー名
@@ -64,10 +64,10 @@
               <h3>Option 2</h3>
               <div class="btn-group btn-group-toggle" data-toggle="buttons">
                 <label class="btn btn-outline-primary">
-                  <input type="radio" name="suboptions" id="option1" autocomplete="off" checked="checked" value="verified"> 認証ユーザーのみ
+                  <input type="radio" name="suboptions" id="option1" autocomplete="off" value="verified"> 認証ユーザー
                 </label>
-                <label class="btn btn-outline-primary">
-                  <input type="radio" name="suboptions" id="option2" autocomplete="off"　value="noVerified"> else
+                <label class="btn btn-outline-primary active">
+                  <input type="radio" name="suboptions" id="option2" autocomplete="off"　value="on" checked> 一般ユーザー
                 </label>
               </div>
             </div>
