@@ -44,6 +44,16 @@
       <img class="img-fluid" src="img/sp_screen3.png">
     </div>
     <p>普段Twitterの公式クライアントで検索するとこのような画面が出てきますよね？.....</p>
+    <p>ユーザーを検索したくてもこれでは使いづらい</p>
+    <img src="img/TSS_screen.png" style="width:100%;height:auto;">
+    <p>それを解決するのがこのTwitter Super Search</p>
+
+    <p>さあ検索してみましょう</p>
+    <div class="abc">
+      <a href="search.php">
+        <button type="submit" class="btn btn-outline-primary btn-block">Twitter Super Searchを使う</button>
+      </a>
+    </div>
   </div>
 
   <!--js 読込み-->
