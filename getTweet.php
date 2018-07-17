@@ -18,7 +18,7 @@ if (isset($_GET['text'])){
 
   $tweetsParams = ['q' => $searchWords,'count' => '25']; // 検索条件を設
   
-  if($optionType == 'tweets'){
+  if($optionType === 'tweets'){
     // キーワードによるツイート検索
     $tweets = $connection->get('search/tweets', $tweetsParams)->statuses;
 
@@ -31,13 +31,13 @@ if (isset($_GET['text'])){
       }
 
       // サブオプションで認証済みかそうでないかを見分ける
-      if ($subOptionType == 'verified'){
-        if ($value->user->verified == true){
+      if ($subOptionType === 'verified'){
+        if ($value->user->verified === true){
           // var_dump($value->user->verified);
           disp_tweet($value, $text);
         }
       }else{
-        if ($value->user->verified == false){
+        if ($value->user->verified === false){
           // var_dump($value->user->verified);
           disp_tweet($value, $text);
         }
@@ -51,39 +51,39 @@ if (isset($_GET['text'])){
     foreach ($users as $value) {
       switch ($optionType){
         case 'username':
-          if (strpos($value->name, $searchWords) != false){
-            if ($subOptionType == 'verified'){
-              if ($value->verified == true){
+          if (strpos($value->name, $searchWords) !== false){
+            if ($subOptionType === 'verified'){
+              if ($value->verified === true){
                 disp_users($value, $users);
               }
             }else{
-              if ($value->verified == false){
+              if ($value->verified === false){
                 disp_users($value, $users);
               }
             }
           }
           break;
         case 'userId':
-          if (strpos($value->screen_name, $searchWords) != false){
-            if ($subOptionType == 'verified'){
-              if ($value->verified == true){
+          if (strpos($value->screen_name, $searchWords) !== false){
+            if ($subOptionType === 'verified'){
+              if ($value->verified === true){
                 disp_users($value, $users);
               }
             }else{
-              if ($value->verified == false){
+              if ($value->verified === false){
                 disp_users($value, $users);
               }
             }
           }
           break;
         case 'description':
-          if (strpos($value->description, $searchWords) != false){
-            if ($subOptionType == 'verified'){
-              if ($value->verified == true){
+          if (strpos($value->description, $searchWords) !== false){
+            if ($subOptionType === 'verified'){
+              if ($value->verified === true){
                 disp_users($value, $users);
               }
             }else{
-              if ($value->verified == false){
+              if ($value->verified === false){
                 disp_users($value, $users);
               }
             }

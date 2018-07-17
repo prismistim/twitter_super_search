@@ -10,9 +10,9 @@ if (getenv('ENV_MODE') === 'dev'){
 }
 
 if (isset($_GET['text'])){
-  $searchWords = $_GET['text']; // キーワードを取得
+  $searchID = $_GET['text']; // キーワードを取得
 
-  $tweetsParams = ['screen_name' => $searchWords, 'count' => '10']; // 検索条件を設
+  $tweetsParams = ['screen_name' => $searchID, 'count' => '10']; // 検索条件を設
 
   $tweets = $connection->get('statuses/user_timeline', $tweetsParams);
 
