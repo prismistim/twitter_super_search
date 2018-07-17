@@ -47,6 +47,49 @@
         <img class="img-fluid" src="img/sp_screen1.png">
         <img class="img-fluid" src="img/sp_screen2.png">
         <img class="img-fluid" src="img/sp_screen3.png">
+    <div id="search">
+      <div class="row">
+        <div class="col-lg-12">
+          <h2>さぁ、検索してみましょう！</h2>
+          <!-- http://cccabinet.jpn.org/bootstrap4/components/navs#nav-pills 参照-->
+          <form id="test-form" action="index.php" method="get">
+            <div class="form-group">
+              <label for="example">テスト用フォーム</label>
+              <input type="text" name="test-text" class="form-control" id="example" placeholder="テスト用">
+            </div>
+          </form>
+        </div>
+        <div class="col-lg-6">
+          <h3>Option 1</h3>
+          <div class="btn-group btn-group-toggle" data-toggle="buttons">
+            <label class="btn btn-outline-primary">
+              <input type="radio" name="options id="option1" autocomplete="off"" checked> ツイート
+            </label>
+            <label class="btn btn-outline-primary">
+              <input type="radio" name="options" id="option2" autocomplete="off"> ユーザー名
+            </label>
+            <label class="btn btn-outline-primary">
+              <input type="radio" name="options" id="option3" autocomplete="off"> ユーザーID
+            </label>
+          </div>
+        </div>
+
+        <div class="col-lg-6">
+          <h3>Option 2</h3>
+          <div class="btn-group btn-group-toggle" data-toggle="buttons">
+            <label class="btn btn-outline-primary">
+              <input type="radio" name="options id="option1" autocomplete="off"" checked> 認証ユーザーのみ
+            </label>
+            <label class="btn btn-outline-primary">
+              <input type="radio" name="options" id="option2" autocomplete="off"> else
+            </label>
+          </div>
+        </div>
+        <div class="col-lg-12">
+          <div id="search" style="padding-top:20px;">
+            <button type="submit" class="btn btn-outline-danger btn-block">Search</button>
+          </div>
+        </div>
       </div>
       <p class="bun">
         普段Twitterの公式クライアントで検索するとこのような画面が出てきますよね？.....<br>
