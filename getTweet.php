@@ -90,9 +90,9 @@ if (isset($_GET['text'])){
           break;
       }
     }
-    disp_tweet($value, $text);
   }
 }
+
 function disp_tweet($value, $text){
   $icon_url = $value->user->profile_image_url;
   $icon_url = str_replace('normal', 'bigger', $icon_url); //デフォルトの画像は小さいので大きいものを読み込むため文字を置き換え
