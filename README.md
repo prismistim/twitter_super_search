@@ -12,9 +12,6 @@ Twitterの公式クライアント、公式サイトで検索すると、一つ�
 - [master]正式環境(安定してサービスを提供する場所)
 https://twitter-super-search.herokuapp.com/
 
-- [dev]開発環境(動くかどうかなどの確認は以下で行う)
-https://twitter-super-search-stg.herokuapp.com/
-
 基本的に自分のブランチで作ったものをサーバーで試したい場合は、devブランチにマージする。masterブランチは安定版を置く場所にする。
 
 - 使用フレームワーク(ライブラリ)
