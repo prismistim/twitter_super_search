@@ -8,6 +8,7 @@
 
   <!--CSS 読込み-->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
   <link rel="stylesheet" href="css/style.css">
 
 </head>
@@ -26,7 +27,7 @@
           <a class="nav-link" href="feeling.php">おもう</a>
         </li> -->
         <li class="nav-item">
-          <a class="nav-link" href="https://twitter.com/intent/tweet?text=「Twitter Super Search」%0aTwitterの検索をちょっと便利にする(?)Webサービス&url=https://www.pr.url/&hashtags=タグ,二つ目" onClick="window.open(encodeURI(decodeURI(this.href)), 'tweetwindow', 'width=650, height=470, personalbar=0, toolbar=0, scrollbars=1, sizable=1'); return false;" rel="nofollow" class="twitter-link">Share</a>
+          <a class="nav-link" href="https://twitter.com/intent/tweet?text=「Twitter Super Search」%0aTwitterの検索をちょっと便利にする(?)Webサービス&url=https://twitter-super-search.herokuapp.com/" onClick="window.open(encodeURI(decodeURI(this.href)), 'tweetwindow', 'width=650, height=470, personalbar=0, toolbar=0, scrollbars=1, sizable=1'); return false;" rel="nofollow" class="twitter-link">Share</a>
         </li>
       </ul>
     </div>
@@ -43,12 +44,12 @@
     <div id="search">
       <div class="row">
         <div class="col-lg-12">
-          <h3>さぁ、検索してみましょう！</h3>
-          <!-- http://cccabinet.jpn.org/bootstrap4/components/navs#nav-pills 参照-->
+          <h3><i class="fas fa-search"></i>さぁ、検索してみましょう！</h3>
+          <div class="notice">お願い：F5連打、過度な回数の検索等しないようにお願いします。</div>
           <form id="myform" action="search.php" method="get">
             <div class="row">
               <div class="col-lg-4 option">
-                <h4>Option 1</h4>
+                <h4><i class="fas fa-cog"></i>Type</h4>
                 <div class="btn-group btn-group-toggle" data-toggle="buttons">
                   <label class="btn btn-outline-primary active">
                     <input type="radio" name="options" id="option1" autocomplete="off" value="tweets" checked> ツイート
@@ -65,7 +66,7 @@
                 </div>
               </div>
               <div class="col-lg-4 option">
-                <h4>Option 2</h4>
+                <h4><i class="fas fa-cogs"></i>Option</h4>
                 <div class="btn-group btn-group-toggle" data-toggle="buttons">
                   <label class="btn btn-outline-primary">
                     <input type="radio" name="suboptions" id="option1" autocomplete="off" value="verified"> 認証ユーザー
@@ -75,19 +76,6 @@
                   </label>
                 </div>
               </div>
-              <!-- <div class="col-lg-4 option">
-                <div class="btn-group btn-group-toggle" data-toggle="buttons">
-                  <label class="btn btn-outline-primary">
-                    <input type="radio" name="moreoptions" id="option1" autocomplete="off" value=":)"> ポジティブ
-                  </label>
-                  <label class="btn btn-outline-primary active">
-                    <input type="radio" name="moreoptions" id="option2" autocomplete="off"　value=":("> ネガティブ
-                  </label>
-                  <label class="btn btn-outline-primary active">
-                    <input type="radio" name="moreoptions" id="option2" autocomplete="off"　value="" checked> 指定なし
-                  </label>
-                </div>
-              </div> -->
             </div>
             <div class="form-group">
               <input type="text" name="text" class="form-control" id="example" placeholder="キーワードを入力">
