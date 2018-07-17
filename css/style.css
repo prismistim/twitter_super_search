@@ -1,3 +1,88 @@
+/*index.html*/
+.box{
+  margin: 50px 0 50px 0;
+}
+
+@media (max-width: 600px){
+  label.btn{
+    font-size: 0.6em;
+  }
+}
+
+label.btn{
+  font-size: 0.8em;
+}
+
+
+nav{
+  background-color: #51c8ff;
+}
+
+.imgSection{
+  margin-bottom: 5px;
+}
+
+img{
+  border: solid 2px #0ab0fd;
+  border-radius: 4px;
+}
+
+.imgSection > img{
+  width: 30%;
+  margin-left: 2%;
+  border: solid 2px #0ab0fd;
+  border-radius: 5px;
+}
+
+h2{
+  font-weight: 300;
+  border-bottom: solid 4px #ACACAC;
+  margin-bottom: 15px;
+}
+
+h3{
+  font-weight: 300;
+  background-color: #98deff;
+  border-radius: 5px;
+  padding: 10px;
+  margin-bottom: 5px;
+}
+
+p.bun{
+  font-weight: 500;
+  letter-spacing: 2px;
+  line-height: 27px;
+  background-color: #ece9d7;
+  border-radius: 5px;
+  padding: 10px;
+  margin: 10px;
+}
+
+.strong{
+  font-weight: 600;
+  font-size: 2em;
+  text-align: center;
+  color: #0ab0fd;
+}
+
+.options{
+  font-weight: 500;
+  margin-top: 10px;
+  line-height: 27px;
+}
+
+ul.options > li{
+  font-size: 18px;
+  border-bottom: 2px solid #FE5353; 
+}
+
+i{
+  margin: 5px 10px 5px 5px;
+}
+
+
+
+/*search.php*/
 span.keyword{
   background-color: #aaebff;
   -webkit-transition: all 0.8s;
@@ -13,12 +98,9 @@ span.keyword{
   padding: 10px;
 }
 
-.option1{
-  margin-bottom: 20px;
-}
+.option{
+  margin: 20px 0 20px 0;
 
-.option2{
-  margin-bottom: 20px;
 }
 
 #result{
@@ -26,9 +108,13 @@ span.keyword{
 }
 
 .card{
-  height: 310px;
+  min-height: 360px;
   margin-bottom: 10px;
   background-color :#aaebff;
+}
+
+.userCard{
+  background-color :#ebebeb;
 }
 
 .thumb{
@@ -44,6 +130,11 @@ a.time{
   font-weight: 500;
 }
 
+.name{
+  font-size: 20px;
+  font-weight: 300;
+}
+
 .userId{
   color: #444444;
   font-weight: 600;
@@ -55,4 +146,37 @@ a.time{
   padding: 10px;
   background-color: #FFFFFF;
   border-radius: 5px;
+}
+
+.userThumb{
+  text-align: center;
+}
+
+.userThumb img{
+  width: 120px;
+  height: 120px;
+  margin-bottom: 5px;
+}
+
+.userMeta{
+  background-color: #FFF; 
+  text-align: center;
+}
+
+.userMeta > .userName{
+  font-size: 20px;
+  font-weight: 200;
+}
+
+.userMeta > .userId{
+  font-size: 14px;
+}
+
+.notice{
+  font-size: 22px;
+  text-align: center;
+  margin: 5px;
+  padding: 10px;
+  font-weight: 600;
+  background-color: #FE5353;
 }
