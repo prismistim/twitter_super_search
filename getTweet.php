@@ -1,6 +1,7 @@
 <?php
 
 date_default_timezone_set('Asia/Tokyo');
+$resultPage = 5;
 
 // 認証情報の読込先
 if (getenv('ENV_MODE') === 'dev'){
@@ -13,8 +14,9 @@ if (isset($_GET['text'])){
   $searchWords = $_GET['text']; // キーワードを取得
   $optionType = $_GET['options']; // 検索したいものを取得
   $subOptionType = $_GET['suboptions']; // 検索したいもの(認証済みユーザーかそうでないか)を取得２
+  // $moreOptionType = $_GET['moreoptions'];
 
-  $tweetsParams = ['q' => $searchWords ,'count' => '12']; // 検索条件を設
+  $tweetsParams = ['q' => $searchWords,'count' => '25']; // 検索条件を設
   
   if($optionType == 'tweets'){
     // キーワードによるツイート検索
@@ -31,10 +33,12 @@ if (isset($_GET['text'])){
       // サブオプションで認証済みかそうでないかを見分ける
       if ($subOptionType == 'verified'){
         if ($value->user->verified == true){
+          // var_dump($value->user->verified);
           disp_tweet($value, $text);
         }
       }else{
         if ($value->user->verified == false){
+          // var_dump($value->user->verified);
           disp_tweet($value, $text);
         }
       }

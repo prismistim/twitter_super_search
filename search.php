@@ -22,6 +22,9 @@
         <li class="nav-item">
           <a class="nav-link" href="search.php">さがす</a>
         </li>
+        <!-- <li class="nav-item">
+          <a class="nav-link" href="feeling.php">おもう</a>
+        </li> -->
         <li class="nav-item">
           <a class="nav-link" href="https://twitter.com/intent/tweet?text=「Twitter Super Search」%0aTwitterの検索をちょっと便利にする(?)Webサービス&url=https://www.pr.url/&hashtags=タグ,二つ目" onClick="window.open(encodeURI(decodeURI(this.href)), 'tweetwindow', 'width=650, height=470, personalbar=0, toolbar=0, scrollbars=1, sizable=1'); return false;" rel="nofollow" class="twitter-link">Share</a>
         </li>
@@ -40,36 +43,51 @@
     <div id="search">
       <div class="row">
         <div class="col-lg-12">
-          <h2>さぁ、検索してみましょう！</h2>
+          <h3>さぁ、検索してみましょう！</h3>
           <!-- http://cccabinet.jpn.org/bootstrap4/components/navs#nav-pills 参照-->
           <form id="myform" action="search.php" method="get">
-            <div class="col-lg-5 option1">
-              <h3>Option 1</h3>
-              <div class="btn-group btn-group-toggle" data-toggle="buttons">
-                <label class="btn btn-outline-primary active">
-                  <input type="radio" name="options" id="option1" autocomplete="off" value="tweets" checked> ツイート
-                </label>
-                <label class="btn btn-outline-primary">
-                  <input type="radio" name="options" id="option2" autocomplete="off" value="username"> ユーザー名
-                </label>
-                <label class="btn btn-outline-primary">
-                  <input type="radio" name="options" id="option3" autocomplete="off" value="userId"> ユーザーID
-                </label>
-                <label class="btn btn-outline-primary">
-                  <input type="radio" name="options" id="option4" autocomplete="off" value="description"> 自己紹介
-                </label>
+            <div class="row">
+              <div class="col-lg-4 option">
+                <h4>Option 1</h4>
+                <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                  <label class="btn btn-outline-primary active">
+                    <input type="radio" name="options" id="option1" autocomplete="off" value="tweets" checked> ツイート
+                  </label>
+                  <label class="btn btn-outline-primary">
+                    <input type="radio" name="options" id="option2" autocomplete="off" value="username"> ユーザー名
+                  </label>
+                  <label class="btn btn-outline-primary">
+                    <input type="radio" name="options" id="option3" autocomplete="off" value="userId"> ユーザーID
+                  </label>
+                  <label class="btn btn-outline-primary">
+                    <input type="radio" name="options" id="option4" autocomplete="off" value="description"> 自己紹介
+                  </label>
+                </div>
               </div>
-            </div>
-            <div class="col-lg-5 option2">
-              <h3>Option 2</h3>
-              <div class="btn-group btn-group-toggle" data-toggle="buttons">
-                <label class="btn btn-outline-primary">
-                  <input type="radio" name="suboptions" id="option1" autocomplete="off" value="verified"> 認証ユーザー
-                </label>
-                <label class="btn btn-outline-primary active">
-                  <input type="radio" name="suboptions" id="option2" autocomplete="off"　value="on" checked> 一般ユーザー
-                </label>
+              <div class="col-lg-4 option">
+                <h4>Option 2</h4>
+                <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                  <label class="btn btn-outline-primary">
+                    <input type="radio" name="suboptions" id="option1" autocomplete="off" value="verified"> 認証ユーザー
+                  </label>
+                  <label class="btn btn-outline-primary active">
+                    <input type="radio" name="suboptions" id="option2" autocomplete="off"　value="on" checked> 一般ユーザー
+                  </label>
+                </div>
               </div>
+              <!-- <div class="col-lg-4 option">
+                <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                  <label class="btn btn-outline-primary">
+                    <input type="radio" name="moreoptions" id="option1" autocomplete="off" value=":)"> ポジティブ
+                  </label>
+                  <label class="btn btn-outline-primary active">
+                    <input type="radio" name="moreoptions" id="option2" autocomplete="off"　value=":("> ネガティブ
+                  </label>
+                  <label class="btn btn-outline-primary active">
+                    <input type="radio" name="moreoptions" id="option2" autocomplete="off"　value="" checked> 指定なし
+                  </label>
+                </div>
+              </div> -->
             </div>
             <div class="form-group">
               <input type="text" name="text" class="form-control" id="example" placeholder="キーワードを入力">
@@ -87,6 +105,15 @@
         require 'getTweet.php';
         echo '</div>';
       ?>
+      <!-- <nav aria-label="ページ送りの実例">
+        <ul class="pagination">
+          <li class="page-item"><a class="page-link" href="">前へ</a></li>
+          <li class="page-item"><a class="page-link" href="#">1</a></li>
+          <li class="page-item"><a class="page-link" href="#">2</a></li>
+          <li class="page-item"><a class="page-link" href="#">3</a></li>
+          <li class="page-item"><a class="page-link" href="#">次へ</a></li>
+        </ul>
+      </nav> -->
     </div>
   </div>
 
